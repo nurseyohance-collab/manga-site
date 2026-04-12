@@ -366,7 +366,12 @@ function showData(records){
             html +=`${g}, `;   
         }
         html += `</li>
-            </ul></div>`;
+        <!--BOOKMARK BUTTON -->
+        <button onclick ='addBookmark(${JSON>stringify(rec)})'>
+        Bookmark
+        </button>
+            </ul>
+            </div>`;
     }
     result.innerHTML = html;
 }
