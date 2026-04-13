@@ -417,33 +417,49 @@ function handleError(error) {
 }
 
 function showData(records){
-    console.log(records.data.Page.media);
     let array = records.data.Page.media;
+
+    allManga = array;
+
+    renderManga(array); // 🔥 use this instead
+}
+    function renderManga(array){
     let result = document.querySelector('#page');
     let html = '';
+
     for (let rec of array){
         html += `<div class="card">
         <figure>
-            <a href="mangaDetails.html"><img src="${rec.coverImage.extraLarge}" alt="${rec.title.romaji}"></a>
-            <figcaption>                    
-                <ul>
-                <li class="card-title">${rec.title.romaji}</li>
-                <li>${rec.title.english}</li>
-                <li>${rec.title.native}</li>
+            <a href="mangaDetails.html">
+                <img src="${rec.coverImage?.extraLarge || 'https://via.placeholder.com/150'}">
+            </a>
 
-              <!--  <li class="genre"> `;
-        //     for(let g of rec.genres){
-        //         html +=`${g}, `;   
-        //     }
-         html += `</li> -->
-                <!--BOOKMARK BUTTON -->
-        <button onclick ='addBookmark(${JSON.stringify(rec)})'> Bookmark</button>
+            <figcaption>
+                <ul>
+                    <li class="card-title">${rec.title.romaji}</li>
+                    <li>${rec.title.english || ''}</li>
+                    <li>${rec.title.native}</li>
                 </ul>
+
+                <button onclick='addBookmark(${JSON.stringify(rec)})'>
+                    Bookmark
+                </button>
             </figcaption>
-        </figure>           
+        </figure>
         </div>`;
     }
+
     result.innerHTML = html;
+}
+    function searchManga(){
+    let query = document.getElementById("searchInput").value.toLowerCase();
+
+    let filtered = allManga.filter(manga => 
+        manga.title.romaji.toLowerCase().includes(query) ||
+        (manga.title.english && manga.title.english.toLowerCase().includes(query))
+    );
+
+    renderManga(filtered);
 }
 function addBookmark(manga) {
    
@@ -461,6 +477,7 @@ function addBookmark(manga) {
     }
 
     console.log("Saved bookmarks:", bookmarks); // for testing
+    displayBookmarks();
 }
 
 function displayBookmarks() {
@@ -479,7 +496,9 @@ function displayBookmarks() {
 
         for (let m of bookmarks) {
             html += `
-            <div class="card">
+           <div class="card">
+    <img src="${m.coverImage?.extraLarge || 'https://via.placeholder.com/150'}"
+    style="width:100%; height:200px; object-fit:cover;">
                 <ul>
                     <li class="card-title">${m.title.romaji}</li>
                     <li>${m.title.english || ''}</li>
