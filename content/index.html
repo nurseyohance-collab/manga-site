@@ -411,5 +411,51 @@ function addBookmark(manga) {
     console.log("Saved bookmarks:", bookmarks); // for testing
 }
 
+function displayBookmarks() {
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    let section = document.querySelector('#bkm');
+
+    let html = `<h2>Your Bookmarks</h2><hr>`;
+
+    if (bookmarks.length === 0) {
+        html += `
+        <div class="no-bkmarks">
+            <p>No bookmarks yet</p>
+        </div>`;
+    } else {
+        html += `<div id="bookmark-list">`;
+
+        for (let m of bookmarks) {
+            html += `
+            <div class="card">
+                <ul>
+                    <li class="card-title">${m.title.romaji}</li>
+                    <li>${m.title.english || ''}</li>
+                    <li>${m.title.native}</li>
+                </ul>
+
+                <button onclick="removeBookmark(${m.id})">
+                    Remove
+                </button>
+            </div>`;
+        }
+
+        html += `</div>`;
+    }
+
+    section.innerHTML = html;
+}
+    
+function removeBookmark(id) {
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+    bookmarks = bookmarks.filter(item => item.id !== id);
+
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+    displayBookmarks();
+}
+    displayBookmarks();
 </script>
 </html>
+
