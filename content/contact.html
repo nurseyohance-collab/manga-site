@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MangaScribe</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background-color: #F7F6F6;
+            color: #444444;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        header{
+            flex-grow: 1;
+            max-height: 10%;
+            width: 100%;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img{
+            width: 20px;
+            height: 20px;
+        }
+        header#logo {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        h1{
+            margin: 0;
+            display:inline;
+        }
+        h2{
+            padding-left: 5em;
+            text-align: center;
+            
+            
+        }
+
+        .accent-color{
+            font-weight: bold;
+            color: #FEC63D;
+        }
+
+        button{
+            padding: 0.5em;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid #444444;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background-color: #FEC63D;
+            color: #444444;
+            border-color: #FEC63D;
+        }
+
+        .primary-btn{
+            background-color: #444444;
+            color: #F7F6F6;
+            width: 50%;
+        }
+
+        .secondary-btn{
+            background: transparent;
+            color: #444444;
+        }
+        #menu{
+            padding: 1em;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 9;
+            width: 100%;
+        }
+
+        /* CONTACT BOX */
+        .contact-box{
+            background-color: #EEEEEE;
+            padding: 2em;
+            border-radius: 16px;
+            width: 420px;
+            text-align: center;
+        }
+
+        .contact-box h2{
+            margin-bottom: 1em;
+        }
+
+        label{
+            display: block;
+            text-align: left;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+        }
+
+        textarea{
+            height: 100px;
+            width: 100%;
+            resize: none;
+        }
+
+        .contact-box button{
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .divider{
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .divider::before,
+        .divider::after{
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .divider span{
+            margin: 0 10px;
+        }
+
+        footer{
+            width: 100%;
+            background-color: #a0a0a0;
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer a{
+            text-decoration: none;
+            color: #444444;
+            margin: 0 5px;
+        }
+
+        footer a:hover{
+            color: #FEC63D;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 30
+        }
+        .message-label {
+            display: block;
+            margin-top: 60px; 
+        }
+        #bkm-logo{
+            color: #FEC63D;
+            font-size: 26px;
+        }
+        .nav-links a {
+            font-size: 20px;      
+            font-weight: 600;
+            text-decoration: none;
+            color: #444444;
+            margin-left: 20px;
+        }
+
+        .nav-links a:hover {
+            color: #FEC63D;
+        }
+        .social-icons a {
+            font-size: 20px;
+            margin-right: 10px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+        .social-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div id="logo">
+            <span class="material-symbols-outlined" id="menu">menu</span>
+            <span class="material-symbols-outlined" id="bkm-logo">collections_bookmark</span>
+            <h1>Manga<span class="accent-color">Scribe</span></h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Browse Manga</a>
+            <a href="#">Filter by Genre</a>
+            <a href="#">Random</a>
+            <a href="profile.html" class="user-icon" aria-label="User Profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        
+    </header>
+
+    <hr style="width: 90%; margin: 0;">
+
+    <!-- MAIN -->
+    <main>
+        <div class="contact-box">
+
+            <form>
+                <b><label>Full Name</label></b>
+                <input type="text" placeholder="Your name">
+
+                <b><label>Email</label></b>
+                <input type="email" placeholder="Your email address">
+
+                <b><label class="message-label">Leave us a message</label></b>
+                <textarea placeholder="Write your message here..."></textarea>
+                
+                
+                <button class="primary-btn">Send Message</button>
+            </form>
+
+            <div class="divider"><span>or</span></div>
+
+            <div class="social-row">
+    <p style="font-size:12px; margin:0;">Reach out to us:</p>
+
+        <div class="social-icons">
+             <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+         </div>
+    </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="#">Bookmarks</a> |
+            <a href="#">Filter by Genre</a> |
+            <a href="#">Random</a> |
+            <a href="#">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="#">Download</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
