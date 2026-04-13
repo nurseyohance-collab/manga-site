@@ -375,6 +375,22 @@ function showData(records){
     }
     result.innerHTML = html;
 }
+function addBookmark(manga) {
+   
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
+    
+    let exists = bookmarks.some(item => item.id === manga.id);
+
+    if (!exists) {
+        bookmarks.push(manga);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        alert("Bookmarked!");
+    } else {
+        alert("Already bookmarked!");
+    }
+
+    console.log("Saved bookmarks:", bookmarks); // for testing
+}
 </script>
 </html>
