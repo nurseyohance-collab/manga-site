@@ -469,9 +469,13 @@ function showData(records){
 }
 function addBookmark(manga) {
    
+  if(localStorage.getItem("loggedIn") !== "true"){
+        alert("Please log in to bookmark manga");
+        return; // stop function
+    }
+
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
-    
     let exists = bookmarks.some(item => item.id === manga.id);
 
     if (!exists) {
@@ -482,7 +486,6 @@ function addBookmark(manga) {
         alert("Already bookmarked!");
     }
 
-    console.log("Saved bookmarks:", bookmarks); // for testing
     displayBookmarks();
 }
 
