@@ -224,6 +224,32 @@
             color: #FEC63D;
             font-size: 26px;
         }
+        .nav-links a {
+            font-size: 20px;      
+            font-weight: 600;
+            text-decoration: none;
+            color: #444444;
+            margin-left: 20px;
+        }
+
+        .nav-links a:hover {
+            color: #FEC63D;
+        }
+        .social-icons a {
+            font-size: 20px;
+            margin-right: 10px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+        .social-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -234,7 +260,14 @@
             <span class="material-symbols-outlined" id="bkm-logo">collections_bookmark</span>
             <h1>Manga<span class="accent-color">Scribe</span></h1>
         </div>
-       
+        <div class="nav-links">
+            <a href="index.html">Browse Manga</a>
+            <a href="#">Filter by Genre</a>
+            <a href="#">Random</a>
+            <a href="profile.html" class="user-icon" aria-label="User Profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
         <div>
             <button class="primary-btn">SIGN UP</button> <button class="secondary-btn">LOG IN</button>
         </div>
