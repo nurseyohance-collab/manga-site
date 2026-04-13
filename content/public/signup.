@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+
+<h2>Sign Up</h2>
+
+<input id="newUser" placeholder="Username or Email"><br><br>
+<input id="newPass" type="password" placeholder="Password"><br><br>
+
+<button onclick="signup()">Sign Up</button>
+
+<script>
+function signup(){
+
+    // simulate account creation
+    alert("Account created successfully");
+
+    // automatically log them in
+    localStorage.setItem("loggedIn", "true");
+
+    // redirect back to main page
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
