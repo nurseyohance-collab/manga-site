@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        *{
+            box-sizing: border-box;
+            /* margin: 0;
+            padding: 0; */
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            background-color: #F7F6F6;
+            color: #444444;
+            font-family: "Montserrat", sans-serif;
+            /*font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;*/
+        }
+        header{
+            flex-grow: 1;
+            max-height: 10%;
+            width: 100%;
+            padding: 1em 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img{
+            width: 20px;
+            height: 20px;
+        }
+        header#logo {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .site{
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            flex-grow: 9;
+            max-height: 90%;
+            width: 100%;
+            align-items: center;
+        }
+
+
+        .accent-color{
+            font-weight: bold;
+            color: #FEC63D;
+        }
+        button{
+            padding: 0.5em;
+            border-radius: 24px;
+            font-weight: 600;
+            transition: color 0.3s, background-color 0.3s;
+            cursor: pointer;
+            border: 2px solid #444444;
+        }
+        button:hover{
+            background-color: #FEC63D;
+            color: #444444;
+            border-color: #FEC63D;
+        }
+        .primary-btn{
+            background-color: #444444;
+            color: #F7F6F6;
+        }
+        .secondary-btn{
+            background: transparent;
+            
+            border-radius: 24px;
+            color: #444444;
+            text-align: center;
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+            /* flex-grow: 7; 
+            max-height: 70%; */
+            max-width: 90%;   
+        }
+        
+        footer{
+            flex-grow: 1;
+            max-height: 1%;
+            width: 100%;
+            background-color: #a0a0a0;
+            padding: 6em 0px;
+            text-align: center;
+        }
+
+        #srch{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #srch div.sbar{
+            display: flex;
+            justify-content: space-between;
+            border-radius: 32px;
+            flex-grow: 8;
+            max-width: 80%;
+            width: 929px;
+            background: #ECE6F0;
+            overflow: hidden;
+            padding-left: 1em;
+        }
+        
+        .sbar input{
+            color: #49454F;
+            background-color: transparent;
+            font-family: "Roboto",sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            border: none;
+            flex-grow: 9;
+            outline: none;
+        }
+        .sbar button{
+            background-color: transparent;
+            border-radius: 0;
+            border: none;
+            flex-grow: 1;
+        }
+        .no-bkmarks{
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            font-size: 20px;
+            padding-left: 5%;
+        }
+        .no-bkmarks button{
+            padding: 1.4em;
+        }
+        main #srch,#bkm,#browse{
+            margin-top: 3em;
+            max-width: 100%;
+        }
+
+        hr{
+            width: 90%;
+            margin: 0;
+        }
+        h1{
+            margin: 0;
+            display:inline;
+        }
+        h2{
+            padding-left: 2em;
+        }
+        div.card {
+            background-color: #fff;
+            padding: 1em;
+            font-size: 12px;
+            margin-bottom: 0.5em;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 30%;
+            justify-content: center;
+            min-width: 160px;
+            margin-right: 2%;
+        }
+        .card-title{
+            font-weight: 700;
+        }
+        .card figure{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        .card figure img{
+            flex-grow: 9;
+            max-height: 90%;
+        }
+        #page{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1em 0px 3em;
+            justify-content: center;
+        } 
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 30
+        }
+        #menu{
+            padding: 1em;
+        }
+        #bkm-logo{
+            color: #FEC63D;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div id="logo">
+            <span class="material-symbols-outlined" id="menu">menu</span>
+            <span class="material-symbols-outlined" id="bkm-logo">collections_bookmark</span>
+            <h1>Manga<span class="accent-color">Scribe</span></h1>
+        </div>
+       
+        <div>
+            <button class="primary-btn">SIGN UP</button> <button class="secondary-btn">LOG IN</button>
+        </div>
+        
+    </header>
+    <hr>
+    <div class="site">
+    <main>
+        <section id="srch">
+            <div class="sbar">
+                <input type="search" placeholder="Search for a manga">
+                <button><span class="material-symbols-outlined">search</span></button>
+            </div>
+        </section>
+
+        <section id="bkm">
+           <h2>Your Bookmarks</h2>
+            <hr>
+            <div class="no-bkmarks">
+            <p><span class="accent-color">Log in</span> to view you bookmarks <br>or <span class="accent-color">Sign up</span> to start bookmarking</p>
+            <div>
+                <button class="primary-btn">SIGN UP</button> <button class="secondary-btn">LOG IN</button>
+            </div>
+            
+            </div> 
+        </section>
+        
+        <section id="browse">
+            <h2>Browse Manga</h2>
+            <hr>
+            <div id="page">
+
+                    <!-- eventual card with images -->
+                    <div class="card">
+                    <figure>
+                        
+                        <img src="https://cdn.myanimelist.net/images/anime/9/76662.jpg" alt="jshkvol19">
+                        <figcaption><li class="card-title">Manga Title</li><li>Native Manga title</li></figcaption>
+                    </figure>           
+                    </div>
+                    <div class="card">
+                    <figure>
+                        
+                        <img src="https://cdn.myanimelist.net/images/anime/9/76662.jpg" alt="jshkvol19">
+                        <figcaption><li class="card-title">Manga Title</li><li>Native Manga title</li></figcaption>
+                    </figure>           
+                    </div>
+                <div id="list"></div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>Home, Bookmarks, Filter by Genre, Random, About, Contact, Download</nav>
+    </footer>
+    </div>
+</body>
+
+<script>
+   
+// Here we define our query as a multi-line string
+// Storing it in a separate .graphql/.gql file is also possible
+const query = `
+query (
+  $page: Int = 1
+  $type: MediaType
+) {
+  Page(page: $page, perPage: 20) {
+    pageInfo {
+      hasNextPage
+    }
+    media(
+      type: $type
+    ) {
+      id
+      title {
+        romaji
+        english
+        native
+      }
+        genres
+    }
+  }
+}
+`;
+
+// Define our query variables and values that will be used in the query request
+const variables = {
+    type: 'MANGA',
+};
+
+// Define the config we'll need for our Api request
+const url = 'https://graphql.anilist.co',
+    options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            query: query,
+            variables: variables
+        })
+    };
+
+// Make the HTTP Api request
+fetch(url, options).then(handleResponse)
+    .then(handleData)
+    .catch(handleError);
+
+function handleResponse(response) {
+    return response.json().then(function (json) {
+        return response.ok ? json : Promise.reject(json);
+    });
+}
+
+function handleData(data) {
+    console.log(data);
+    showData(data);
+}
+
+function handleError(error) {
+    alert('Error, check console');
+    console.error(error);
+}
+
+function showData(records){
+    console.log(records.data.Page.media);
+    let array = records.data.Page.media;
+    let result = document.querySelector('#page');
+    let html = '';
+    for (let rec of array){
+        html += `<div class="card">
+            <ul>
+            <!-- <li>${rec.id}</li> -->
+            <li class="card-title">${rec.title.romaji}</li>
+            <li>${rec.title.english}</li>
+            <li>${rec.title.native}</li>
+            <li class="genre"> `;
+        for(let g of rec.genres){
+            html +=`${g}, `;   
+        }
+        html += `</li>
+        <!--BOOKMARK BUTTON -->
+        <button onclick ='addBookmark(${JSON>stringify(rec)})'>
+        Bookmark
+        </button>
+            </ul>
+            </div>`;
+    }
+    result.innerHTML = html;
+}
+function addBookmark(manga) {
+   
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+    
+    let exists = bookmarks.some(item => item.id === manga.id);
+
+    if (!exists) {
+        bookmarks.push(manga);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        alert("Bookmarked!");
+    } else {
+        alert("Already bookmarked!");
+    }
+
+    console.log("Saved bookmarks:", bookmarks); // for testing
+}
+</script>
+</html>
